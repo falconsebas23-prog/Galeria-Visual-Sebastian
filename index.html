@@ -12,14 +12,12 @@
         <h1 class="titulo-galeria">20 Personajes de Dragon Ball</h1>
     </header>
 
-
-
     <!-- Subtítulo para exploración -->
     <section class="explora-titulo">
         <h2>Explora los personajes de Dragon Ball Z</h2>
     </section>
 
-    <!-- Sección de personajes -->
+    <!-- Sección de personajes (20 personajes) -->
     <section class="personajes">
         <div class="personaje">
             <img src="Goku.webp" alt="Goku">
@@ -142,10 +140,35 @@
         </div>
     </section>
 
+    <!-- Formulario responsive -->
+    <section class="contacto">
+        <h2>Contáctanos</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Imagen adaptable según tamaño -->
+    <section class="imagen-responsiva">
+        <picture>
+            <source media="(max-width: 480px)" srcset="resources/goku-small.webp">
+            <source media="(max-width: 768px)" srcset="resources/goku-medium.webp">
+            <img src="resources/goku-large.webp" alt="Goku" />
+        </picture>
+    </section>
+
     <!-- Autor al final de la página -->
     <footer>
         <p>Autor: JHON SEBASTIAN FALCON RUIZ</p>
     </footer>
 </body>
 </html>
-

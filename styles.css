@@ -3,29 +3,30 @@
    =========================== */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(120deg, #f9f0d9, #ffe0b2); /* Fondo degradado amarillo/naranja */
+    background: linear-gradient(120deg, #f9f0d9, #ffe0b2);
     color: #333;
     margin: 0;
-    padding: 20px;
+    padding: 1.5rem;
     text-align: center;
+    line-height: 1.6;
 }
 
 /* ===========================
    Header principal con animación
    =========================== */
 .header-galeria {
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
     background: radial-gradient(circle at top left, #ffd54f, #ff6f00);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.4);
     display: inline-block;
 }
 
 .titulo-galeria {
     font-size: 3rem;
     color: #fff;
-    text-shadow: 2px 2px 0 #000, 4px 4px 10px rgba(0,0,0,0.3);
+    text-shadow: 0.1rem 0.1rem 0 #000, 0.25rem 0.25rem 0.625rem rgba(0,0,0,0.3);
     background: linear-gradient(90deg, #ff0000, #ffcc00, #00ff00, #00ccff, #ff00ff);
     background-size: 500% 100%;
     -webkit-background-clip: text;
@@ -40,45 +41,23 @@ body {
 }
 
 /* ===========================
-   Galería de bolas de dragón
-   =========================== */
-.galeria-bolas {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.galeria-bolas img {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.galeria-bolas img:hover {
-    transform: scale(1.3) rotate(10deg);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-/* ===========================
    Subtítulo de exploración
    =========================== */
 .explora-titulo h2 {
     color: #ff6600;
-    text-shadow: 1px 1px 2px #000;
-    margin-bottom: 20px;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem #000;
+    margin-bottom: 1.25rem;
+    font-size: 1.75rem;
 }
 
 /* ===========================
-   Contenedor de personajes
+   Contenedor de personajes (Grid responsivo)
    =========================== */
 .personajes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
 }
 
 /* ===========================
@@ -86,44 +65,109 @@ body {
    =========================== */
 .personaje {
     background: linear-gradient(145deg, #fff3e0, #ffd54f);
-    border: 3px solid #ff9900;
-    border-radius: 15px;
-    padding: 15px;
-    width: 220px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    border: 0.1875rem solid #ff9900;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0.25rem 0.25rem 0.625rem rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .personaje:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 6px 6px 15px rgba(0,0,0,0.4);
+    transform: translateY(-0.625rem) scale(1.05);
+    box-shadow: 0.375rem 0.375rem 0.9375rem rgba(0,0,0,0.4);
 }
 
 .personaje img {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 0.625rem;
+    margin-bottom: 0.625rem;
 }
 
 .personaje h2 {
     color: #0066cc;
-    margin: 10px 0 5px 0;
+    margin: 0.625rem 0 0.3125rem 0;
+    font-size: 1.25rem;
 }
 
 .personaje p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+/* ===========================
+   Formulario responsive
+   =========================== */
+.contacto {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #ffebc0;
+    border-radius: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.625rem rgba(0,0,0,0.3);
+}
+
+.contacto form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contacto form label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.contacto form input,
+.contacto form textarea {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.125rem solid #ccc;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.contacto form textarea {
+    grid-column: span 2;
+    resize: vertical;
+}
+
+.contacto form button {
+    grid-column: span 2;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contacto form button:hover {
+    background: #cc7a00;
+}
+
+/* ===========================
+   Imagen adaptable según tamaño
+   =========================== */
+.imagen-responsiva {
+    margin: 2rem 0;
+}
+
+.imagen-responsiva img {
+    width: 100%;
+    max-width: 25rem;
+    border-radius: 1rem;
 }
 
 /* ===========================
    Footer
    =========================== */
 footer {
-    margin-top: 40px;
-    padding: 15px;
+    margin-top: 2.5rem;
+    padding: 1rem;
     background: #ffd54f;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.3);
 }
 
 footer p {
@@ -133,25 +177,70 @@ footer p {
 }
 
 /* ===========================
-   Responsive para móviles
+   Media queries
    =========================== */
+
+/* Tablets */
 @media (max-width: 768px) {
-    .personaje {
-        width: 45%;
+    .titulo-galeria {
+        font-size: 2.5rem;
+    }
+
+    .contacto form {
+        grid-template-columns: 1fr;
     }
 }
 
+/* Móviles */
 @media (max-width: 480px) {
-    .personaje {
-        width: 90%;
-    }
-
     .titulo-galeria {
         font-size: 2rem;
     }
 
+    .personaje h2 {
+        font-size: 1rem;
+    }
+
+    .personaje p {
+        font-size: 0.75rem;
+    }
+
     .galeria-bolas img {
-        width: 50px;
-        height: 50px;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .imagen-responsiva img {
+        max-width: 100%;
+    }
+}
+
+/* ===========================
+   Estilos para impresión
+   =========================== */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+        text-align: left;
+        font-size: 12pt;
+    }
+
+    .header-galeria,
+    .contacto,
+    .imagen-responsiva,
+    footer {
+        display: none;
+    }
+
+    .personaje {
+        border: 1px solid #000;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .personaje img {
+        max-width: 100%;
     }
 }
